@@ -1,0 +1,6 @@
+1、下载三个文件：
+(1) Download下面的Manifest：gdc_manifest_20210127_120006.txt
+(2) Download下面的Cart：gdc_download_20210127_121942.783304.tar.gz    
+注：相当于在终端用data transfer tool的gdc-client_v1.4.0_Windows_x64.zip下载
+gdc-client.exe download -m gdc_manifest_20210127_120006.txt   报错？
+(3) Metadata：metadata.cart.2021-01-27.json
