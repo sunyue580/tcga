@@ -4,3 +4,7 @@
 注：相当于在终端用data transfer tool的gdc-client_v1.4.0_Windows_x64.zip下载
 gdc-client.exe download -m gdc_manifest_20210127_120006.txt   报错？
 (3) Metadata：metadata.cart.2021-01-27.json
+2、移动所有文件到一个文件下下面
+(1)perl moveFiles.pl
+(2)选中所有压缩包解压到当前文件夹
+(3)perl merge.pl metadata.cart.2021-01-27.json    #把单独的每个文件合并成一个表达矩阵
