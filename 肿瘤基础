@@ -3,7 +3,7 @@
     OS.time: overall survival time in days;                
 
 (2) DSS: disease-specific survival                         1 表示生存状态是死亡+tumor_status是WITH TUMOR(死亡原因是肿瘤)；
-                                                           0 表示生存状态时存活或者生存状态是死亡+tumor_status是TUMOR FREE
+                                                           0 表示生存状态时存活或者生存状态是死亡+tumor_status是TUMOR FREE(死亡原因写了肿瘤,但最终DSS为1？)
     DSS.time: disease-specific survival time in days       days_to_death和days_to_last_followup   或者    last_contact_days_to 和 death_days_to
 
 (3) DFI: disease-free interval event                       1 表示 新肿瘤事件：包括局部复发,远处转移，新的原发肿瘤，including cases with a new tumor event whose type is N/A. 
