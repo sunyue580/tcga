@@ -1,0 +1,19 @@
+1、生存信息：
+(1) OS：overall survival;                                  1 表示任何原因的死亡, 0是存活
+    OS.time: overall survival time in days;                
+
+(2) DSS: disease-specific survival                         1 表示生存状态是死亡+tumor_status是WITH TUMOR(死亡原因是肿瘤)；
+                                                           0 表示生存状态时存活或者生存状态是死亡+tumor_status是TUMOR FREE
+    DSS.time: disease-specific survival time in days       days_to_death和days_to_last_followup   或者    last_contact_days_to 和 death_days_to
+
+(3) DFI: disease-free interval event                       1 表示 新肿瘤事件：包括局部复发,远处转移，新的原发肿瘤，including cases with a new tumor event whose type is N/A. 
+                                                           0 表示 censored otherwise. New primary tumor in other organ was censored; patients who were Dead with tumor without new tumor event are excluded; patients wih stage IV are excluded too.
+注：Disease free定义：首先，treatment_outcome_first_course 是 "Complete Remission/Response"
+                      如果 tumor type doesn't have "treatment_outcome_first_course" ,则 disease-free was defined by the value "R0" in the field of "residual_tumor"
+                      否则 disease-free was defined by the value "negative" in the field of "margin_status". 
+                      如果 tumor type did not have any of these fields, then its DFI was NA.
+                     
+ (4) PFI: progression-free interval event                  1 表示 new tumor event (疾病进展、局部复发、远处转移、任何位置的新原发肿瘤或者死于癌症但没有新肿瘤事件，including cases with a new tumor event whose type is N/A)
+                                                           0 表示 censored otherwise. 
+          PFI.time: progression-free interval time in days          for events, new_tumor_event_dx_days_to or death_days_to,  whichever is applicable
+                                                                    for censored cases, either last_contact_days_to or death_days_to, whichever is applicable.
